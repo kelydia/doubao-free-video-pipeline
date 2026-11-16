@@ -1,0 +1,203 @@
+{
+  "meta": {
+    "project": "doubao-xmas-bear-video",
+    "product": "圣诞小熊挂饰 Christmas Teddy Bear Ornament",
+    "reference_video": "D:/素材库/参考视频/货车掉下箱子.mp4",
+    "structure_model": "卡车载满快递箱 → 车尾一只颠落 → 路边停下 → 拆箱(3只透明袋) → 三袋点选 → 撕袋取出 → 三款举示 → CTA",
+    "aspect": "9:16",
+    "resolution": [
+      1080,
+      1920
+    ],
+    "fps": 30,
+    "total_seconds": 34,
+    "audio": "BGM + 顶部固定花字，无口播、无人脸",
+    "anchor_card": "00_input/product_anchor.md",
+    "global_caption": "圣诞节前必买 🎄",
+    "global_negative": "CGI, 3D render, plastic gloss, glossy ceramic, over-smoothed skin, perfect symmetry, floating objects, extra fingers, deformed hands, warped product, color shift, extra ornaments, text artifacts, watermark, logo, subtitle burn-in, oversaturated, HDR look, cartoon, illustration, anime, toy miniature set, stop motion",
+    "packaging": "每只小熊单独装一只透明塑料自粘袋（无礼盒、无盲盒、无棉纸托盘）",
+    "user_note_m00164": "只有3款小熊挂件，不需要24格",
+    "user_note_package": "真实包装只有透明袋，一熊一袋，没有其他包装",
+    "user_note_m01941": "用户反馈：箱子凭空出现、与卡车无关联；参考视频里箱子是从卡车上掉下来的。已改为 S1 车斗统一牛皮箱并预留歪出，S2 单镜完成掉落全程"
+  },
+  "shots": [
+    {
+      "shot_id": "S1",
+      "seconds": 5,
+      "segment": "A 钩子 · 因果起点",
+      "source_segment": "参考视频 0.0–3.0s 卡车送圣诞礼盒",
+      "framing": "中远景 · 低机位",
+      "camera": "固定机位轻微手持，车辆由左向右驶入并穿过桥洞",
+      "beat": "阴雨湿路上，一辆装满牛皮纸快递箱的小货车驶过桥洞；车斗尾部一只纸箱已经歪出边缘，为下一镜的掉落埋下伏笔",
+      "dialogue": "",
+      "caption": "圣诞节前 · 一定要有它",
+      "consistency_lock": "不出现商品；车斗里必须是**牛皮纸快递箱**（本色牛皮纸、透明胶带两道、边角有压痕），与 S2/S3 同一款。禁止红缎带礼盒、彩盒、礼品袋",
+      "product_refs": [],
+      "scene_refs": [],
+      "first_frame_prompt": "Real phone footage, overcast rainy winter day, low camera angle beside a wet two-lane road under a concrete overpass. A small red cargo truck with an exposed flatbed loaded with stacked plain kraft cardboard shipping boxes tied down with one thin bungee cord approaches from the left in the near lane. The boxes are bare brown cardboard with two strips of clear packing tape and crushed corners, no ribbons, no printed gift wrap. One box at the very rear edge of the flatbed leans slightly outward, its corner already past the side rail. Wet asphalt with standing water, mirror reflections, worn yellow double lines, asphalt grain, tire tracks. Grey-blue desaturated daylight, slight handheld micro-shake, natural motion blur, 35mm equivalent, mild sensor noise, no people visible.",
+      "last_frame_prompt": "Same rainy road and overpass, same red truck now further away passing under the dark concrete bridge, the stack of kraft boxes silhouetted against the bright tunnel exit; the box at the rear edge of the flatbed has tipped further out and is sliding off, spray mist behind the wheels, wet asphalt reflections unchanged, camera still fixed with mild handheld sway.",
+      "node_frames": [],
+      "notes": "因果起点镜。车斗箱型必须与 S2 掉落的那只、S3 拆开的那只完全同款，否则观众会觉得'换了只箱子'（用户反馈）。"
+    },
+    {
+      "shot_id": "S2",
+      "seconds": 4,
+      "segment": "B 掉落",
+      "source_segment": "参考视频 2.0–3.0s 纸箱从卡车滚落路边",
+      "framing": "低机位仰视车斗尾部 → 跟箱下摇 → 平视落点",
+      "camera": "起幅对准卡车车斗尾部，纸箱歪出下落时镜头上摇跟随下坠，箱子落地后停下平视",
+      "beat": "货车驶过，车斗尾部那只牛皮纸箱被颠出边缘、翻滚坠落，砸在湿路面弹了一下，滚到护栏边停住，溅起水花",
+      "dialogue": "",
+      "caption": "它从车上掉了下来",
+      "consistency_lock": "纸箱必须与 S1 车斗里那只、S3 拆开的那只**完全同款**：牛皮纸本色、透明胶带两道、边角压痕；必须是**从卡车上掉落**的动作，单次生成内完成「歪出→下坠→弹跳→靠护栏」",
+      "product_refs": [],
+      "scene_refs": [],
+      "first_frame_prompt": "Real phone footage, low handheld angle on a wet roadside, rainy overcast winter day. In the upper part of frame the rear of a red flatbed truck is already passing at the top edge, and a plain kraft cardboard shipping box - bare brown cardboard, two strips of clear packing tape, crushed corner - is tumbling out over the side rail, one corner still caught, the box tilted 45 degrees and beginning to fall. Motion blur on the box and the truck rear lights. Wet asphalt below with standing water and yellow line, a rusty guardrail along the left, blurred grey city and misty sky beyond. Slight handheld vertical drift following the falling box, 35mm, natural grain, no people.",
+      "last_frame_prompt": "Real phone footage, camera now settled level on the wet shoulder: the same kraft cardboard box lying against the rusty guardrail where it came to rest, one face scuffed from the fall, the two strips of clear packing tape glinting with rainwater, a wet dent in the puddle behind it and thin splash ripples still spreading. Wet leaves and gravel around, yellow road line in the lower third, background traffic far away and out of focus. Same overcast cold light, shallow depth of field, mild handheld sway.",
+      "node_frames": [
+        {
+          "id": "k1",
+          "prompt": "Mid-air moment: the kraft cardboard box halfway to the ground against the wet asphalt, clearly separated from the truck which is already leaving the top of frame, rain droplets frozen around the box, slight motion blur on the edges."
+        }
+      ],
+      "notes": "因果闭环镜（用户反馈：箱子不能凭空出现）。单镜内完成掉落全程；尾帧构图直接接 S3 首帧（双手拆胶带）。1 张节点帧 = 半空中的箱子。"
+    },
+    {
+      "shot_id": "S3",
+      "seconds": 6,
+      "segment": "C 拆箱",
+      "source_segment": "参考视频 3.0–5.5s 拆胶带掀盖",
+      "framing": "手部特写 · 俯拍第一人称",
+      "camera": "固定俯拍，手持轻微呼吸感",
+      "beat": "米白连指针织手套的双手撕开纸箱胶带、掀开箱盖，里面是平放的 3 只小熊，每只各装一只透明塑料自粘袋",
+      "dialogue": "",
+      "caption": "快递到了 · 一熊一袋",
+      "consistency_lock": "手套为米白连指粗针织（非黑色橡胶）；箱内只有 3 只小熊，每只单独装在一只透明塑料自粘袋里，袋子薄软、有褶皱与封口档条；不得出现任何礼盒/盲盒/棉纸托盘",
+      "product_refs": [],
+      "scene_refs": [],
+      "first_frame_prompt": "Real phone footage, top-down first-person view of two hands in cream ribbed knit gloves pulling at two strips of clear packing tape on a kraft cardboard box sitting on wet asphalt. Fingers bunched, knit yarn visible with slight pilling, natural uneven pulling motion. Overcast daylight, water droplets on the tape, asphalt grain in background, shallow depth of field, 35mm handheld.",
+      "last_frame_prompt": "Same phone-shot top-down view, box flaps pushed flat: inside the kraft box three Christmas teddy bear ornaments lie side by side, each sealed in its own thin transparent plastic self-adhesive bag (soft crinkled film, white self-seal strip at the top, bag edges slightly uneven and reflective). Left bag: a cream-white teddy bear sitting inside a sage-green and white rope wreath with a pink-white knit beanie, black bead eyes, red curved smile, one white knitted leg hanging down. Center bag: a bear wearing a grey-green knitted stocking, arms raised. Right bag: a bear hugging a large champagne-gold gift box with green sprigs. No gift boxes, no blind boxes, no tissue-paper tray. Wet asphalt and overcast cold light around; the plastic film catches broken highlights.",
+      "node_frames": [
+        {
+          "id": "k1",
+          "prompt": "Mid-action frame: knit-gloved fingers mid-way through ripping the clear tape, tape peeling up with a stretched transparent flap, half-open box lid lifted at 45 degrees, glimpse of dark green and gold pattern inside, motion blur on the fingers."
+        },
+        {
+          "id": "k2",
+          "prompt": "Frame at the moment the lid is lifted but before full reveal: inside the kraft box the tops of three transparent plastic bags glinting, each bag holding one teddy bear with a pink knit beanie; the plastic is slightly frosted by condensation, only the shapes and pink hats are clear."
+        }
+      ],
+      "notes": "复杂动作镜，2 张节点帧。掀盖后 3 款商品可以同框露出（用户要求：只有 3 款，就 3 个格子），无需悬念遮挡。"
+    },
+    {
+      "shot_id": "S4",
+      "seconds": 4,
+      "segment": "D 揭晓",
+      "source_segment": "参考视频 5.5–9.0s 日历格 → 改为 3 格圆窗",
+      "framing": "特写 · 俯拍",
+      "camera": "固定，手指在画框中移动",
+      "beat": "三只透明袋装的小熊并排铺开，戴连指针织手套的手指逐个点过三个袋子，停在第三只（抱礼物款）",
+      "dialogue": "",
+      "caption": "3 款 · 一熊一袋",
+      "consistency_lock": "三只小熊各装一只透明塑料袋；袋子薄软、封口有白色自粘条；商品款式（花环款/针织袜款/抱礼物款）与锚点卡一致",
+      "product_refs": [],
+      "scene_refs": [],
+      "first_frame_prompt": "Real phone macro shot, top-down: three Christmas teddy bear ornaments lying side by side on wet asphalt, each inside its own thin transparent plastic self-adhesive bag. The bags are soft and crinkled, sealing strips visible at the top, edges lifting slightly, broken highlights on the film. Left: cream teddy inside a sage-green and white rope wreath with a pink-white knit beanie. Center: bear wearing a grey-green knitted stocking with both arms raised. Right: bear hugging a large champagne-gold gift box. A cream knit-mitten glove fingertip enters from the right about to press on the left bag. Overcast cold light, shallow depth of field.",
+      "last_frame_prompt": "Same top-down macro: the knit mitten fingertip resting on the right transparent bag, pressing a soft dent into the crinkled film; inside that bag the bear hugging a champagne-gold gift is razor sharp - pink-white knit beanie with a tiny green sprig, black bead eyes, red curved smile, gold gift with a gold bow, white satin ribbon loop. The other two bags are softly out of focus. Plastic film highlights glint along the fingertip.",
+      "node_frames": [],
+      "notes": "原 24 格改为 3 格（用户要求商品只有 3 款）。手指逐个点过 = 参考视频的'逐格下滑'动作保留。"
+    },
+    {
+      "shot_id": "S5",
+      "seconds": 6,
+      "segment": "E 产品取出",
+      "source_segment": "参考视频 9.0–14.0s 抠格取盒取物 → 改为 开圆窗取挂饰",
+      "framing": "特写 · 俯拍微距",
+      "camera": "固定微距，焦点跟随手指到商品",
+      "beat": "撕开第三只透明袋的封口，把抱礼物款小熊挂饰取出来，托在掌心",
+      "dialogue": "",
+      "caption": "抱礼物款 · 细节拉满",
+      "consistency_lock": "该镜为 **APYX744-4 抱礼物款**；先隔着透明袋，再撕开白色封口条取出；全程只有透明袋，无礼盒",
+      "product_refs": [
+        "O1CN01bqhaj51kfEcbmEQmH_!!963724710-0-cib.jpg",
+        "O1CN015vKYQd1kfEcckorW4_!!963724710-0-cib.jpg"
+      ],
+      "scene_refs": [],
+      "first_frame_prompt": "Real phone macro footage, top-down indoors, warm light: a cream knit-mitten thumb and index finger pinching the white self-seal strip at the top of a thin transparent plastic bag, pulling it apart; the film stretches and wrinkles, the seal edges separate with a fine white line. Inside the bag a teddy bear hugging a champagne-gold gift box, pink-white knit beanie, black bead eyes, red curved smile. Warm lamp light from the left, cold window light from the right, Christmas light bokeh behind.",
+      "last_frame_prompt": "Same macro, warm indoor light: the Christmas teddy bear ornament resting on an open cream knit-mitten palm, taken completely out of the plastic bag. Cream-white teddy bear with a pink-white knit beanie (small green sprig on the hat) hugging a large champagne-gold gift box tied with a gold bow, green sprigs beside it, white satin ribbon loop at the top, body leaning slightly forward, one foot extended. Razor sharp knit fuzz texture, warm rim light, cold window light from the right, shallow depth of field. The empty crinkled transparent bag lies blurred in the background.",
+      "node_frames": [
+        {
+          "id": "k1",
+          "prompt": "The transparent bag seal peeled open halfway, a knit-mitten fingertip slipping inside under the bear's back, the soft film bulging where the hand pushes it."
+        },
+        {
+          "id": "k2",
+          "prompt": "The bear half out of the plastic bag: its head and the champagne-gold gift emerging past the seal opening while the rest is still behind the wrinkled film."
+        },
+        {
+          "id": "k3",
+          "prompt": "Close-up of the teddy bear ornament with the gold gift fully in the gloved palm: cream knitted bear, pale rose beanie, champagne-gold gift box, green sprigs, white satin ribbon, warm window side light, product must match the reference exactly."
+        }
+      ],
+      "notes": "最关键的一致性镜。3 张节点帧：撕封口 → 半取出 → 托在掌心。"
+    },
+    {
+      "shot_id": "S6",
+      "seconds": 5,
+      "segment": "F 举示",
+      "source_segment": "参考视频 14.0–16.0s 挂件举到镜头前",
+      "framing": "微距特写 → 中景",
+      "camera": "镜头跟随手指略微后拉，焦点从挂饰转到虚化圣诞树",
+      "beat": "三款小熊挂饰并排提到镜头前，背景虚化为圣诞树灯串",
+      "dialogue": "",
+      "caption": "3 款一次全收",
+      "consistency_lock": "三款同框且款式不混：花环款(APYX744-3)、针织袜款(APYX744-1)、抱礼物款(APYX744-4)；道具只有透明袋",
+      "product_refs": [
+        "O1CN01zjFYVz1kfEcbK02hm_!!963724710-0-cib.jpg",
+        "O1CN015vKYQd1kfEcckorW4_!!963724710-0-cib.jpg"
+      ],
+      "scene_refs": [
+        "261110/圣诞树上的泰迪熊挂饰.png"
+      ],
+      "first_frame_prompt": "Real phone footage, extreme close-up indoors: a cream knit-mitten hand pinching three white satin ribbon loops at once, lifting three teddy bear ornaments out of a crumpled transparent plastic bag lying on a cream fabric tabletop. Left: sage-green and white rope wreath bear with pink knit beanie and one dangling knitted leg. Center: bear inside a grey-green knitted stocking, arms raised. Right: bear hugging a champagne-gold gift with green sprigs. Warm lamp light, Christmas light bokeh, slight motion blur on the dangling legs.",
+      "last_frame_prompt": "Real phone footage, medium close-up: three Christmas teddy bear ornaments held up by their white satin ribbons against a blurred Christmas tree behind, warm bokeh string lights, green needles, red baubles out of focus. Left: sage-green and white yarn wreath bear with pale rose beanie and dangling knitted legs; center: bear standing inside a grey-green knitted stocking with pale rose beanie; right: bear hugging a large champagne-gold gift with green sprigs. All three razor sharp and centered, natural window light from the left, shallow depth of field, no text.",
+      "node_frames": [
+        {
+          "id": "k1",
+          "prompt": "The three ornaments lifted halfway out of the box, ribbons taut between gloved fingertips, tissue paper still visible below in the foreground, background beginning to blur."
+        },
+        {
+          "id": "k2",
+          "prompt": "The three ornaments raised to eye level in a row, background Christmas tree fully defocused into warm bokeh, all three front-facing and still, soft window light raking across the knit texture."
+        }
+      ],
+      "notes": "节点帧 k2 即事实上的'尾帧'，可用于 S7 首帧衔接。"
+    },
+    {
+      "shot_id": "S7",
+      "seconds": 4,
+      "segment": "G CTA",
+      "source_segment": "参考视频 16.0–20.4s 尾板（替换为商品 CTA）",
+      "framing": "中景 · 环绕微移",
+      "camera": "轻微横向偏移，模拟人自然走动",
+      "beat": "三款小熊并排挂在圣诞树上，暖灯串与雪松枝，收尾 CTA",
+      "dialogue": "",
+      "caption": "3 款一套 · 圣诞限定",
+      "consistency_lock": "三款同时出现：花环款(APYX744-3)、针织袜款(APYX744-1)、抱礼物款(APYX744-4)，颜色与锚点卡一致",
+      "product_refs": [
+        "O1CN01fneanr1kfEcbGhOY8_!!963724710-0-cib.jpg",
+        "O1CN01t0c56A1kfEcbK1zYO_!!963724710-0-cib.jpg",
+        "O1CN01bqhaj51kfEcbmEQmH_!!963724710-0-cib.jpg",
+        "O1CN01zjFYVz1kfEcbK02hm_!!963724710-0-cib.jpg"
+      ],
+      "scene_refs": [
+        "261110/圣诞树上的泰迪熊挂饰.png",
+        "261110/圣诞树上的泰迪熊花环挂饰.png"
+      ],
+      "first_frame_prompt": "Real photo footage: three Christmas teddy bear ornaments hanging side by side from white satin ribbons on a real fir Christmas tree. Left: sage-green and white rope wreath bear with pink-white knit beanie, black bead eyes, red curved smile, one dangling knitted leg. Center: bear inside a grey-green knitted stocking with a cream knit sweater collar, both arms raised. Right: bear hugging a large champagne-gold gift with green sprigs and a gold bow. Warm string lights bokeh behind, red baubles, pinecones, snow-dusted needles, natural window light, slight handheld drift.",
+      "last_frame_prompt": "Same tree, camera drifted slightly to the right: the three ornaments now in the center-right of frame with more of the warm string lights and red baubles visible at the left edge, all three products still fully sharp and identical in color and shape to the first frame, soft foreground pine branch blurring at the bottom edge for depth.",
+      "node_frames": [],
+      "notes": "三款已在 S6 举示过，S7 是它们在树上的稳定收尾；若 AI 形变严重，可降级为只保留花环款。"
+    }
+  ]
+}

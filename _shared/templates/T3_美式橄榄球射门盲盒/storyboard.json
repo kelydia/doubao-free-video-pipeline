@@ -1,0 +1,459 @@
+{
+  "project": "2026-11-15_美式橄榄球射门盲盒",
+  "version": "v1-橄榄球主题变体",
+  "updated": "2026-11-15",
+  "source_of_truth": "01_plan/分镜脚本.md",
+  "references": {
+    "visual_bible": "01_plan/视觉规范.md",
+    "keyframe_prompts": "01_plan/关键帧提示词.md",
+    "audio_plan": "01_plan/音效方案.md",
+    "product_anchor": "00_input/product_anchor.md",
+    "reuse_manifest": "01_plan/复用清单.md",
+    "base_template": "_shared/templates/T1_世界杯点球盲盒/README.md",
+    "base_storyboard": "_shared/templates/T1_世界杯点球盲盒/storyboard.json"
+  },
+  "template_lineage": {
+    "based_on": "T1_世界杯点球盲盒（A 轨 v3 定稿 25.0s + B 轨 S9 4.0s）",
+    "reuse_scope": "工程层 100% 复用：A/B 轨分层、六拍、镜头序列与时长、9:16 规格、C 模式锚点先行、一镜一事拆镜、TRANSIT 桥接镜、音效时间轴、S9 定格收尾、箱位变体、看图纪律、目录结构、脚本与音效资产",
+    "theme_layer_only": "只替换 8 处主题视觉层：①球场/夜场氛围 ②U 形黄门柱（无网） ③棕红椭球 ④头盔护肩球员装备 ⑤开球座 ⑥命中物理（删入网/网鼓包/网回弹） ⑦花字 FIELD GOAL! ⑧负向词",
+    "v3_alignment_note": "T1 模板库里的 storyboard.json 仍停留在 v2（target_duration 32.5s、tracks.A 含 S6/S7/S8、S7/S8 标 dropped），但其 README.md §1/§4 与 _shared/复盘_2026-11-15.md:41-47 已定稿 v3（25.0s、S6a 2.0s + TRANSIT 4.0s、S7/S8 弃用）。本文件按 v3 定稿对齐，属于对模板 machinesource 的有意修正，不是另起炉灶。",
+    "structural_delta": "橄榄球门柱无球网 → 删除 T1 的「箱后仰翻入网 / 网鼓起回弹 / 箱脱网」整段。S6a 只做「球撞中间列上层箱、歪斜 15–20° 开始脱墙」，脱墙飞来 + 掀盖露纸丝全交给 TRANSIT。因此本版不需要 S6b 拆分镜，A 轨镜数由 T1 v3 的 7 镜保持为 7 镜（S1..S5 + S6a + TRANSIT）。",
+    "hard_constraint": "只有一个球员：真实 field goal 的 holder 扶球手刻意省略，球置于 kicking tee，全部提示词不得出现 holder",
+    "captions_note": "GOAL! → FIELD GOAL!；CONGRATULATIONS 与 <SKU> SHOP NOW 保留；全片英文花字"
+  },
+  "spec": {
+    "aspect": "9:16",
+    "resolution": "1080x1920",
+    "gen_resolution": "720x1280",
+    "deliver_resolution": "720x1280",
+    "resolution_note": "视频生成与实际交付均为 720x1280（复盘确认未放大）；1080x1920 为关键帧裁水印后尺寸 / 可选放大",
+    "fps": 30,
+    "target_duration": 29.0,
+    "a_track_duration": 25.0,
+    "b_track_duration": 4.0,
+    "voiceover": false,
+    "captions": "en"
+  },
+  "narrative_model": {
+    "beats": [
+      "悬念(高空球场)",
+      "事件(射门)",
+      "命中(撞箱)",
+      "揭示(箱飞来)",
+      "聚焦(开箱)",
+      "CTA(商品页)"
+    ]
+  },
+  "tracks": {
+    "A": {
+      "desc": "全店复用，只渲一次",
+      "shots": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6a",
+        "TRANSIT"
+      ]
+    },
+    "B": {
+      "desc": "每个 SKU 一条",
+      "shots": [
+        "S9"
+      ]
+    }
+  },
+  "shots": [
+    {
+      "shot_id": "S1",
+      "seconds": 4.0,
+      "gen_seconds": 4,
+      "beat": "悬念",
+      "framing": "高空垂直俯拍，100 码场长轴竖直，端区与 U 形门柱在上部中央",
+      "action": "极缓慢向前推",
+      "keyframe": "02_keyframes/final/K1_aerial.jpg",
+      "refs": [
+        "02_keyframes/final/K1_aerial.jpg"
+      ],
+      "transition_in": "片头",
+      "caption": null,
+      "status": "pending",
+      "clip": "03_clips/S1_aerial.mp4",
+      "consistency_lock": [
+        "门柱在画面上部中央",
+        "草坪条纹沿长轴竖直",
+        "主光画面右上方",
+        "看台压暗零人脸",
+        "四角泛光灯柱"
+      ],
+      "negative": [
+        "文字",
+        "队徽",
+        "端区文字",
+        "记分牌",
+        "水印",
+        "人脸"
+      ],
+      "theme_delta": "足球场 → 美式橄榄球夜场；白色矩形球门 → U 形亮黄门柱（无网）"
+    },
+    {
+      "shot_id": "S2",
+      "seconds": 3.5,
+      "gen_seconds": 4,
+      "beat": "悬念",
+      "framing": "端区箱墙正前低机位，透过门柱立柱看箱墙",
+      "action": "轻微向前推 + 微下压",
+      "keyframe": "02_keyframes/final/K2_boxwall.jpg",
+      "refs": [
+        "02_keyframes/final/K2_boxwall.jpg"
+      ],
+      "transition_in": "硬切（可选 0.15s 白闪）",
+      "caption": null,
+      "status": "pending",
+      "clip": "03_clips/S2_boxwall.mp4",
+      "consistency_lock": [
+        "箱墙 6 列 x 2 层 = 12 只",
+        "箱体无印刷文字",
+        "胶带为半透明细带",
+        "门柱亮黄无球网"
+      ],
+      "negative": [
+        "文字",
+        "logo",
+        "水印",
+        "球网",
+        "箱子数量变化"
+      ],
+      "theme_delta": "T1 的球门框白 #F2F2EE + 球网 → U 形黄门柱 + 完全无网"
+    },
+    {
+      "shot_id": "S3",
+      "seconds": 4.0,
+      "gen_seconds": 4,
+      "beat": "事件",
+      "framing": "开球点后方贴地，椭球立于开球座，门柱与箱墙景深虚化",
+      "action": "从球体上方缓慢下压 / 微推",
+      "keyframe": "02_keyframes/final/K3_spot.jpg",
+      "refs": [
+        "02_keyframes/final/K3_spot.jpg"
+      ],
+      "transition_in": "硬切",
+      "caption": null,
+      "status": "pending",
+      "clip": "03_clips/S3_spot.mp4",
+      "consistency_lock": [
+        "棕红椭球带白色环带与鞋带缝线",
+        "无商标文字",
+        "球置于浅棕开球座",
+        "箱墙 6 列",
+        "门柱在上部"
+      ],
+      "negative": [
+        "文字",
+        "logo",
+        "水印",
+        "圆形足球",
+        "球员提前入画",
+        "扶球手"
+      ],
+      "theme_delta": "白底蓝红三色复古足球 → 棕红椭球；点球点 → kicking tee；新增 holder 负向词"
+    },
+    {
+      "shot_id": "S4",
+      "seconds": 4.5,
+      "gen_seconds": 5,
+      "beat": "事件",
+      "framing": "踢球手身后 3m，离地 1.2m，正对背影",
+      "action": "球员背影深呼吸；前景（球员与门柱之间）开球座上的球全程保持不动、清晰可见",
+      "keyframe": "02_keyframes/final/K4_player.jpg",
+      "refs": [
+        "02_keyframes/final/K4_player.jpg"
+      ],
+      "transition_in": "硬切",
+      "caption": null,
+      "status": "pending",
+      "clip": "03_clips/S4_player.mp4",
+      "consistency_lock": [
+        "藏青球衣 #1B2A44 无号码无队徽",
+        "亮银白头盔 #D8DCE0 加深色面罩",
+        "明显宽肩护肩轮廓",
+        "只出背影",
+        "门柱占画面上部约 2/3 视野背景",
+        "球员为最靠近镜头的主体、占画面下部、严格只出背影",
+        "球员前方（球员与门柱之间的中景）恰好一颗棕红椭球立在浅棕开球座上，透视上较小但清晰可见、不被球员遮挡"
+      ],
+      "negative": [
+        "文字",
+        "号码",
+        "正脸",
+        "五官",
+        "logo",
+        "水印",
+        "第二个球员",
+        "门将",
+        "扶球手",
+        "裁判",
+        "第二颗球",
+        "球消失",
+        "球移到球员身后"
+      ],
+      "theme_delta": "短发球员 → 头盔 + 护肩；头盔面罩天然遮脸，比 T1 更易守住「不露脸」"
+    },
+    {
+      "shot_id": "S5",
+      "seconds": 3.0,
+      "gen_seconds": 4,
+      "beat": "事件",
+      "framing": "贴地侧后方低机位，腰以下与背影局部",
+      "action": "脚背击球，草屑水珠逆光爆开",
+      "keyframe": "02_keyframes/final/K5_strike.jpg",
+      "refs": [
+        "02_keyframes/final/K5_strike.jpg"
+      ],
+      "transition_in": "硬切",
+      "caption": null,
+      "status": "pending",
+      "clip": "03_clips/S5_strike.mp4",
+      "consistency_lock": [
+        "与 S3 同一颗椭球",
+        "球衣头盔颜色一致",
+        "无第二颗球",
+        "只露腰以下与背影",
+        "起始状态写成球已在空中、脚已停半空"
+      ],
+      "negative": [
+        "文字",
+        "号码",
+        "logo",
+        "水印",
+        "第二颗球",
+        "人脸",
+        "扶球手"
+      ],
+      "theme_delta": "沿用 T1 §7-6 动作型镜头写法：起始状态写成「动作已完成一半」"
+    },
+    {
+      "shot_id": "S6a",
+      "seconds": 2.0,
+      "gen_seconds": 5,
+      "beat": "命中",
+      "framing": "端区侧后方固定机位，朝箱墙看，镜头完全静止",
+      "action": "椭球撞中间列上层箱 → 箱歪斜 15–20° 开始脱墙（只做这一件事）",
+      "keyframe": "02_keyframes/final/K6a_incoming.jpg",
+      "refs": [
+        "02_keyframes/final/K6a_incoming.jpg"
+      ],
+      "refs_note": "只挂 1 张参考图。参考图里绝不能有球网，否则模型会在无网场景里凭空画一张网（T1 §7-2 参考图带入元素）",
+      "transition_in": "硬切",
+      "caption": "FIELD GOAL!",
+      "status": "pending",
+      "clip": "03_clips/S6a_impact.mp4",
+      "gen_note": "生成 5s，后期剪到 2.0s；取末帧作为 TRANSIT 唯一首帧参考",
+      "consistency_lock": [
+        "镜头完全静止，不推不拉不摇不升降不变焦",
+        "箱墙大小位置数量始终与参考图一模一样",
+        "开头的箱墙有几只，结尾就必须还有几只",
+        "只有 target_col=3 那只上层箱改变角度",
+        "箱歪斜但不倒地、不飞出画面",
+        "全片无球网"
+      ],
+      "negative": [
+        "球网",
+        "网绳",
+        "白色矩形足球门框",
+        "减少或增加箱子数量",
+        "箱墙变矮变窄或整体后移",
+        "箱子穿透网面",
+        "箱子飞出画面",
+        "网渲染成硬板/布幕/铁丝网",
+        "第二个球",
+        "人脸",
+        "球员",
+        "文字",
+        "logo",
+        "水印",
+        "推拉摇移变焦"
+      ],
+      "theme_delta": "删除 T1 的「箱后仰翻入网 / 网鼓起回弹」；S6a 只保留「撞箱歪斜脱墙」。无 S6b 拆分镜。"
+    },
+    {
+      "shot_id": "TRANSIT",
+      "seconds": 4.0,
+      "gen_seconds": 5,
+      "beat": "揭示",
+      "framing": "承 S6a 末帧机位，由镜头自身演掉机位变化",
+      "action": "箱彻底脱墙 → 朝镜头飞来变大 → 箱盖掀开一道缝、露米白纸丝",
+      "keyframe": "02_keyframes/final/K7_box_fly.jpg",
+      "refs": [
+        "03_clips/S6a_impact.mp4 末帧",
+        "02_keyframes/final/K7_box_fly.jpg"
+      ],
+      "refs_note": "首帧必须严格等于 S6a 末帧（T1 §7-5 桥接镜修复法）；机位变化由新镜头自身演掉，衔接处零白闪",
+      "transition_in": "同机位连切（零白闪）",
+      "caption": "CONGRATULATIONS",
+      "status": "pending",
+      "clip": "03_clips/TRANSIT_boxfly.mp4",
+      "consistency_lock": [
+        "TRANSIT 首帧 = S6a 末帧，歪斜箱角度与其余 11 只箱位置不变",
+        "箱体仍为长方体不变形",
+        "盖只掀一道缝、未露出商品",
+        "主体贴镜头时 4 秒内高度增加不到 10%",
+        "全片无球网、无第二颗球"
+      ],
+      "negative": [
+        "箱子变形",
+        "文字",
+        "logo",
+        "水印",
+        "人脸",
+        "球网",
+        "白闪",
+        "第二个球",
+        "商品提前露出"
+      ],
+      "theme_delta": "T1 的「箱脱网」→「箱脱墙」；飞来掀盖露纸丝逻辑完全不变。这是全片最关键的一镜（桥接 + 揭示合并）。"
+    },
+    {
+      "shot_id": "S9",
+      "seconds": 4.0,
+      "gen_seconds": 5,
+      "beat": "聚焦 + CTA",
+      "framing": "35° 俯角近景，缓慢推近到商品特写",
+      "action": "箱子落地小回弹，盖向两侧翻落，纸丝轻晃",
+      "keyframe": "02_keyframes/final/K8_open_<SKU>.jpg",
+      "refs": [
+        "02_keyframes/final/K8_open_<SKU>.jpg"
+      ],
+      "refs_note": "每 SKU 只挂 1 张该 SKU 单款白底参考图；挂多张会让模型混款（T1 README §3）",
+      "transition_in": "硬切",
+      "caption": "<商品名> · <价格> · SHOP NOW",
+      "status": "blocked",
+      "blocked_reason": "等待用户提供商品 SKU 白底图与真实包装，填 00_input/product_anchor.md 后才能出 K8 与 B 轨视频",
+      "clip": "03_clips/S9_open_<SKU>.mp4",
+      "freeze_note": "播到 t≈1.6s 后定格该帧 2.4s 至 4s（商品仍在包装内）；silence 必须 = FREEZE_T + HOLD = 4s，否则音频只有 27.4s",
+      "consistency_lock": [
+        "商品与该 SKU 白底图一致",
+        "箱内为米白纸丝",
+        "全程无手",
+        "箱体牛皮纸色与 A 轨一致"
+      ],
+      "negative": [
+        "手",
+        "文字",
+        "logo",
+        "水印",
+        "人脸",
+        "商品颜色/配件不符",
+        "球网"
+      ],
+      "theme_delta": "与 T1 完全一致，仅 S9 提示词商品描述段随 SKU 变化"
+    }
+  ],
+  "joins": [
+    {
+      "pair": [
+        "S1",
+        "S2"
+      ],
+      "type": "硬切",
+      "must_match": [
+        "门柱位置",
+        "草坪条纹走向",
+        "主光方向"
+      ]
+    },
+    {
+      "pair": [
+        "S2",
+        "S3"
+      ],
+      "type": "硬切",
+      "must_match": [
+        "箱墙 6 列 x 2 层",
+        "箱体无字",
+        "门柱在上部",
+        "无球网"
+      ]
+    },
+    {
+      "pair": [
+        "S3",
+        "S4"
+      ],
+      "type": "硬切",
+      "must_match": [
+        "椭球在开球座上",
+        "门柱在上部",
+        "无第二颗球"
+      ]
+    },
+    {
+      "pair": [
+        "S4",
+        "S5"
+      ],
+      "type": "硬切",
+      "must_match": [
+        "踢球手站位与朝向",
+        "球衣与头盔颜色"
+      ]
+    },
+    {
+      "pair": [
+        "S5",
+        "S6a"
+      ],
+      "type": "硬切",
+      "must_match": [
+        "球飞向端区中上部",
+        "命中为 target_col 上层箱"
+      ]
+    },
+    {
+      "pair": [
+        "S6a",
+        "TRANSIT"
+      ],
+      "type": "同机位连切（零白闪）",
+      "must_match": [
+        "歪斜箱角度",
+        "箱体朝向",
+        "其余 11 只箱位置",
+        "机位完全一致"
+      ]
+    },
+    {
+      "pair": [
+        "TRANSIT",
+        "S9"
+      ],
+      "type": "硬切",
+      "must_match": [
+        "箱落到画面下方",
+        "箱盖开口方向",
+        "米白纸丝"
+      ]
+    }
+  ],
+  "box_variants": {
+    "V1_center": {
+      "desc": "原 A 轨，target_col=3 上层箱歪斜脱墙",
+      "cost": "0"
+    },
+    "V2_mirror": {
+      "desc": "对 S6a + TRANSIT 整段做 hflip 水平镜像",
+      "cost": "0 额度",
+      "note": "本方案已禁一切文字与队徽，镜像安全"
+    },
+    "V3_render": {
+      "desc": "球路改指向另一列，单独重渲 S6a + TRANSIT，S1–S5 复用",
+      "cost": "2 次视频生成"
+    },
+    "target_highlight": {
+      "desc": "S2 / S3 叠呼吸金色光圈圈住本期目标箱（PIL 叠层）",
+      "cost": "0 额度",
+      "params": "target_col=1..6, target_row=upper/lower"
+    }
+  }
+}
